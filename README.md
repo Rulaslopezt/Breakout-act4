@@ -5,7 +5,6 @@ Juego tipo *Breakout* en **Godot 4** conectado a una **base de datos SQLite**, c
 que hace el jugador.
 
 > **Práctica 4 — Conexión a una base de datos**
-> Alumno: *José Luis David Bonilla Carranza*
 
 ---
 
@@ -170,30 +169,6 @@ Cinco pestañas que se actualizan solas cada 5 segundos:
 
 ---
 
-## 🔒 Notas de diseño
-
-- **Validación en el servidor:** el juego no es de fiar (cualquiera puede modificarlo), así que el servidor recorta y valida todo: nombre de 16 caracteres máximo, puntos dentro de rango, tipos de evento permitidos, modo `normal`/`infinito`…
-- **Sin inyección de HTML:** la web pinta los nombres con `textContent`, nunca `innerHTML`.
-- **Sin pantallas bloqueadas:** si el servidor no responde, las peticiones tienen *timeout* de 5 segundos, el juego sigue y los envíos se reintentan después.
-- **Sin librerías externas:** ni en Python (solo la librería estándar) ni en la web (nada de CDN).
-
-> ⚠️ Al ser un sistema **local**, la clasificación no es a prueba de trampas: quien
-> quiera podría enviar una puntuación falsa con `curl`. Para una práctica local es
-> aceptable; blindarlo requeriría validar la partida en el servidor o firmar los
-> resultados.
-
----
-
-## 📦 Subir a GitHub (entrega)
-
-```bash
-git init
-git add .
-git commit -m "Práctica 4: Breakout Neon con base de datos, leaderboard y panel web"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/breakout-neon-practica4.git
-git push -u origin main
-```
 
 Antes de entregar, juega **un par de partidas** con el servidor encendido para que
 `servidor/ranking.db` tenga datos y el profesor los vea al instante en la web.
